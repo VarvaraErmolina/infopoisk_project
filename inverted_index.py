@@ -528,30 +528,3 @@ def build_search_engine(
     )
     pipeline = InvertedIndexPipeline(config)
     return pipeline.fit_from_csv(input_path)
-
-
-if __name__ == "__main__":
-    engine = build_search_engine(
-        input_path="woman_ru_9_topics_preprocessed.csv",
-        text_column="preprocessed_text",
-    )
-
-    results = engine.search(
-        query="Мне изменил муж",
-        index_type="fasttext",
-        top_k=5,
-    )
-
-    print("Результаты поиска:")
-    for _, row in results.iterrows():
-        print("=" * 80)
-        print(f"doc_id: {row['doc_id']}")
-        print(f"score : {row['score']:.4f}")
-        print(f"time  : {row['search_time_seconds']:.6f} сек.")
-        print()
-
-        if "text" in row:
-            print(row["text"])
-        else:
-            print("Колонка 'text' не найдена в результирующем DataFrame.")
-        print()
