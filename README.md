@@ -36,12 +36,12 @@ data/*.csv               # Данные
 
 **Параметры:**
 
-- --query — текст запроса
-- --engine — inverted / matrix
-- --index — тип индекса
-- --data — путь к CSV
-- --text_column — колонка с текстом
-- --top_k — число результатов
+- --query - текст запроса
+- --engine - inverted / matrix
+- --index - тип индекса
+- --data - путь к CSV
+- --text_column - колонка с текстом
+- --top_k - число результатов
 
 пример запуска:
 ```
