@@ -2,7 +2,7 @@
 
 **Структура проекта:**
 ```
-main.py                  # CLI-интерфейс
+main.py                  # CLI-интерфейс, точка запуска
 preprocessing_data.py    # Предобработка текста
 inverted_index.py        # Основной движок и индексы
 matrix_index.py          # Матричная реализация
@@ -23,22 +23,22 @@ data/*.csv               # Данные
 **Индексы:**
 
 *inverted*
-frequency - частотный индекс
-bm25 - вероятностная модель
-word2vec - усреднение векторов слов
-fasttext - улучшенный word2vec (с n-граммами)
+- frequency - частотный индекс
+- bm25 - вероятностная модель
+- word2vec - усреднение векторов слов
+- fasttext - улучшенный word2vec (с n-граммами)
 *matrix*
-frequency
-bm25
+- frequency
+- bm25
 
 **Параметры:**
 
---query — текст запроса
---engine — inverted / matrix
---index — тип индекса
---data — путь к CSV
---text_column — колонка с текстом
---top_k — число результатов
+- --query — текст запроса
+- --engine — inverted / matrix
+- --index — тип индекса
+- --data — путь к CSV
+- --text_column — колонка с текстом
+- --top_k — число результатов
 
 пример запуска:
 ```
