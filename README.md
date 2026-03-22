@@ -2,20 +2,20 @@
 
 **Структура проекта:**
 ```
-├── app.py # Запуск сайта
-├── main.py  # CLI-интерфейс, запуск поиска
-├── inverted_index.py  # Основной движок и индексы
-├── matrix_index.py  # Матричная реализация
-├── preprocessing_data.py  # Предобработка текста
-├── woman_ru_9_topic.csv # Корпус
-├── woman_ru_9_topics_preprocessed.csv # Предобработанный корпус, создаётся при первом запуске
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── search.html
-│   └── results.html
-└── static/
-    └── style.css
+app.py # Запуск сайта
+main.py  # CLI-интерфейс, запуск поиска
+inverted_index.py  # Основной движок и индексы
+matrix_index.py  # Матричная реализация
+preprocessing_data.py  # Предобработка текста
+woman_ru_9_topic.csv # Корпус
+woman_ru_9_topics_preprocessed.csv # Предобработанный корпус, создаётся при первом запуске
+templates/
+├── base.html
+├── index.html
+├── search.html
+└── results.html
+static/
+└── style.css
 ```
 
 **Предобработка**
