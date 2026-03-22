@@ -23,11 +23,14 @@ data/*.csv               # Данные
 **Индексы:**
 
 *inverted*
+
 - frequency - частотный индекс
 - bm25 - вероятностная модель
 - word2vec - усреднение векторов слов
 - fasttext - улучшенный word2vec (с n-граммами)
+  
 *matrix*
+
 - frequency
 - bm25
 
@@ -52,3 +55,6 @@ python main.py \
 ```
 
 Результат - таблица (doc_id, score, search_time_seconds, текст документа).
+
+Мария Селифанова, Варвара Ермолина
+БКЛ221
