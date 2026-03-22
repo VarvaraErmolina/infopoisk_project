@@ -53,7 +53,7 @@ static/
 - --top_k - число результатов
 
 пример запуска в CLI:
-``` python
+```python
 python main.py \
   --query "гадалка нагадала" \
   --engine inverted \
