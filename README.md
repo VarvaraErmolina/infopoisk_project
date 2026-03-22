@@ -10,6 +10,7 @@ data/*.csv               # Данные
 ```
 
 **Предобработка**
+
 Тексты проходят:
 
 - приведение к нижнему регистру
@@ -20,16 +21,18 @@ data/*.csv               # Данные
 Результат сохраняется в колонку preprocessed_text, все индексы строятся по ней.
 
 **Индексы:**
+
 *inverted*
-frequency — частотный индекс
-bm25 — вероятностная модель
-word2vec — усреднение векторов слов
-fasttext — улучшенный word2vec (с n-граммами)
+frequency - частотный индекс
+bm25 - вероятностная модель
+word2vec - усреднение векторов слов
+fasttext - улучшенный word2vec (с n-граммами)
 *matrix*
 frequency
 bm25
 
 **Параметры:**
+
 --query — текст запроса
 --engine — inverted / matrix
 --index — тип индекса
@@ -40,7 +43,7 @@ bm25
 пример запуска:
 ```
 python main.py \
-  --query "Мне изменил муж" \
+  --query "гадалка нагадала" \
   --engine inverted \
   --index bm25 \
   --data data/file.csv \
@@ -48,4 +51,4 @@ python main.py \
   --top_k 5
 ```
 
-Результат — таблица (doc_id, score, search_time_seconds, текст документа).
+Результат - таблица (doc_id, score, search_time_seconds, текст документа).
