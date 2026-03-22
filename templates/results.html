@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Результаты{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Результаты поиска</h2>
+
+    <p><strong>Запрос:</strong> {{ query }}</p>
+    <p><strong>Движок:</strong> {{ engine_name }}</p>
+    <p><strong>Индекс:</strong> {{ index_type }}</p>
+    <p><strong>Количество результатов:</strong> {{ top_k }}</p>
+    <p><strong>Время поиска:</strong> {{ "%.4f"|format(search_time) }} сек.</p>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% elif results %}
+        {% for item in results %}
+            <article class="result-card">
+                <h3>Документ {{ item.doc_id }}</h3>
+                <p><strong>Score:</strong> {{ "%.4f"|format(item.score) }}</p>
+                <p>{{ item.text }}</p>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p>Ничего не найдено.</p>
+    {% endif %}
+
+    <a class="button" href="{{ url_for('search_page') }}">Новый поиск</a>
+</section>
+{% endblock %}

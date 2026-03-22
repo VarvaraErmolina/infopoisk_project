@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Поиск</h2>
+
+    <form action="{{ url_for('results') }}" method="get" class="search-form">
+        <label for="query">Запрос</label>
+        <input type="text" id="query" name="query" required>
+
+        <label for="engine">Тип движка</label>
+        <select id="engine" name="engine">
+            <option value="inverted">Обратный индекс</option>
+            <option value="matrix">Матричный индекс</option>
+        </select>
+
+        <label for="index">Тип индекса</label>
+        <select id="index" name="index">
+            <option value="bm25">BM25</option>
+            <option value="frequency">Frequency</option>
+            <option value="word2vec">Word2Vec</option>
+            <option value="fasttext">FastText</option>
+        </select>
+        
+
+        <label for="top_k">Количество результатов</label>
+        <input type="number" id="top_k" name="top_k" min="1" max="20" value="5">
+
+        <button type="submit" class="button">Найти</button>
+    </form>
+</section>
+{% endblock %}
